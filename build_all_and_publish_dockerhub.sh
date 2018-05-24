@@ -1,22 +1,10 @@
 #!/bin/bash
 
-cd shopfront
-mvn clean install
-if docker build -t danielbryantuk/djshopfront . ; then
-  docker push danielbryantuk/djshopfront
+cd monitor
+#clean
+mvn install
+if docker build -t madhukirans/monitor:1.0 . ; then
+  docker push madhukirans/monitor:1.0
 fi
 cd ..
 
-cd productcatalogue
-mvn clean install
-if docker build -t danielbryantuk/djproductcatalogue . ; then
-  docker push danielbryantuk/djproductcatalogue
-fi
-cd ..
-
-cd stockmanager
-mvn clean install
-if docker build -t danielbryantuk/djstockmanager . ; then
-  docker push danielbryantuk/djstockmanager
-fi
-cd ..
